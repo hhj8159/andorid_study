@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("kotlin-kapt") // kapt플러그인추가
 }
 
 android {
@@ -44,15 +45,10 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    // https://mvnrepository.com/artifact/androidx.room/room-common
-    implementation("androidx.room:room-common:2.6.1")
-    // https://mvnrepository.com/artifact/androidx.room/room-runtime
     implementation("androidx.room:room-runtime:2.6.1")
-    // https://mvnrepository.com/artifact/androidx.room/room-compiler
-    implementation("androidx.room:room-compiler:2.6.1")
-    // https://mvnrepository.com/artifact/androidx.room/room-ktx
-    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
 
+    implementation("androidx.room:room-ktx:2.6.1")
 
 
 
