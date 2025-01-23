@@ -1,6 +1,8 @@
 package com.hjham.dgtodo.ui
 
 import android.content.Intent
+import android.media.MediaPlayer
+import android.media.SoundPool
 import android.os.Bundle
 import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
@@ -46,7 +48,23 @@ class MainActivity : AppCompatActivity() {
         }
 
         loadTodos()
+
+        // sound
+        val soundPool = SoundPool.Builder().build()
+        val ding = soundPool.load(this, R.raw.windows_music0123, 1)
+        // music
+        val mediaPlayer = MediaPlayer.create(this, R.raw.music0123)
+
+        findViewById<FloatingActionButton>(R.id.fab_ding).setOnClickListener {
+            // soundPool
+            soundPool.play(ding, 1f, 1f, 0, 0, 1f)
+        }
+        findViewById<FloatingActionButton>(R.id.fab_music).setOnClickListener {
+            mediaPlayer.start()
+        }
     }
+
+
 
     private fun loadTodos() {
         lifecycleScope.launch {

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/naver"
+        android:icon="@drawable/naver"
+        android:title="@string/title_naver" />
+
+    <item
+        android:id="@+id/react"
+        android:icon="@drawable/logo"
+        android:title="@string/title_react" />
+
+
+    <item
+        android:id="@+id/google"
+        android:icon="@drawable/googlefavicon"
+        android:title="@string/title_google" />
+
+</menu>
